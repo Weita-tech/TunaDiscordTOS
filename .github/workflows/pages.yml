@@ -50,8 +50,12 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      # Enable Pages once in repository Settings > Pages > Source: GitHub Actions.
+      # The workflow token deploys an existing site; it cannot create the Pages site.
       - name: Configure Pages
         uses: actions/configure-pages@v5
+        with:
+          enablement: false
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
