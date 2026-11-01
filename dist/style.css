@@ -4,3 +4,5 @@
 
 /* Keep the illustration and document layout free of decorative symbols. */
 .hero-art{background:none}.tab .arrow{font-size:14px;line-height:inherit}.document-head{gap:0}.document-head .version{margin-left:auto}.side-note{display:block}.key-note{display:block}@media(max-width:540px){.document-head{gap:10px}.document-head .version{margin-left:0;margin-top:0}}
+
+.discord-terms-link { color: inherit; text-decoration: underline; text-underline-offset: 3px; font-weight: 600; }

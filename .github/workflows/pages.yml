@@ -55,7 +55,11 @@ jobs:
       - name: Configure Pages
         uses: actions/configure-pages@v5
         with:
+<<<<<<< HEAD
           enablement: false
+=======
+          enablement: true
+>>>>>>> 22a2eb5a7aa7bbb1310942b6858ae60a5d9df00f
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

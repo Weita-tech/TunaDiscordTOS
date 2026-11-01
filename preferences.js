@@ -1,4 +1,9 @@
 const english = {
+  "Điều khoản dịch vụ Discord": "Discord Terms of Service",
+  "Khi sử dụng Kiana trên Discord, bạn cần tuân thủ Điều khoản dịch vụ của Discord cùng các quy định áp dụng của nền tảng.": "When using Kiana on Discord, you must follow Discord’s Terms of Service and applicable platform policies.",
+  "Đọc Điều khoản dịch vụ Discord ↗": "Read Discord’s Terms of Service ↗",
+  "Điều khoản này do Discord ban hành và có thể được cập nhật. Hãy xem nội dung đầy đủ tại liên kết chính thức; quy tắc của Kiana không thay thế điều khoản của Discord.": "These terms are issued by Discord and may be updated. Read the full terms at the official link; Kiana’s rules do not replace Discord’s terms.",
+
   "Discord hỗ trợ": "Discord support",
   "Tham gia máy chủ Discord hỗ trợ của Kiana": "Join Kiana’s Discord support server",
   "để đặt câu hỏi hoặc liên hệ đội ngũ nhé.": "to ask questions or contact the team.",
