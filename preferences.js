@@ -111,7 +111,9 @@ document.querySelectorAll('[aria-label], [alt], [data-title], meta[name="descrip
     if (original && english[original]) attributeEntries.push({ element, attribute, original });
   });
 });
-let language = preferenceStore.get('kiana-language') === 'en' ? 'en' : 'vi';
+const defaultLanguage = 'vi';
+let language = preferenceStore.get('kiana-language');
+if (language !== 'en' && language !== 'vi') language = defaultLanguage;
 const systemTheme = window.matchMedia('(prefers-color-scheme: dark)');
 let savedTheme = preferenceStore.get('kiana-theme');
 if (!['light', 'dark'].includes(savedTheme)) savedTheme = null;
@@ -132,10 +134,18 @@ function applyTheme() {
 function applyLanguage() {
   document.documentElement.lang = language;
   document.title = language === 'en' ? english['Kiana — Chính sách & Quy tắc'] : 'Kiana — Chính sách & Quy tắc';
+
   textEntries.forEach(({ node, original }) => {
-    node.nodeValue = language === 'en' ? original.replace(original.trim(), english[original.trim()]) : original;
+    const key = original.trim();
+    const translated = language === 'en' ? (english[key] ?? original) : original;
+    node.nodeValue = translated;
   });
-  attributeEntries.forEach(({ element, attribute, original }) => element.setAttribute(attribute, language === 'en' ? english[original] : original));
+
+  attributeEntries.forEach(({ element, attribute, original }) => {
+    const translated = language === 'en' ? (english[original] ?? original) : original;
+    element.setAttribute(attribute, translated);
+  });
+
   languageButton.textContent = language === 'en' ? 'VI' : 'EN';
   languageButton.setAttribute('aria-label', language === 'en' ? 'Chuyển sang tiếng Việt' : 'Switch to English');
   languageButton.title = languageButton.getAttribute('aria-label');
